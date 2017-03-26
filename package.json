@@ -1,21 +1,22 @@
 {
-  "name": "boilerplate",
+  "name": "auth",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "boilerplate",
+  "author": "ColinHart",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^1.0.2",
     "body-parser": "^1.16.0",
     "express": "^4.15.2",
-    "express-session": "^1.14.2",
+    "express-session": "^1.15.1",
     "hbs": "^4.0.1",
-    "method-override": "^2.3.7",
-    "mongoose": "^4.7.7",
-    "morgan": "^1.7.0"
+    "method-override": "^2.3.8",
+    "mongoose": "^4.9.1",
+    "morgan": "^1.8.1",
+    "pryjs": "^1.0.3"
   }
 }
