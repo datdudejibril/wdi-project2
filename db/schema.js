@@ -3,11 +3,15 @@ var Schema = mongoose.Schema;
 
 mongoose.Promise = global.Promise;
 
+var ProjectSchema = new Schema({
+  projectname: String,
+  url: String
+})
+
+
 var UserSchema = new Schema({
   email: String,
   password_digest: String,
-  created_at: Date,
-  updated_at: Date
 });
 
 UserSchema.pre('save', function(next) {
@@ -19,7 +23,8 @@ UserSchema.pre('save', function(next) {
 });
 
 var UserModel = mongoose.model('User', UserSchema);
-
+var ProjectModel = mongoose.model('Project', ProjectSchema);
 module.exports = {
-  User: UserModel
+  User: UserModel,
+  Project: ProjectModel
 }

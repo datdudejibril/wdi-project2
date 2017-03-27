@@ -13,7 +13,7 @@ var sessionsController = require('./controllers/sessions.js');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost/auth');
+mongoose.connect('mongodb://localhost/rankthatproject');
 
 app.set('view engine', 'hbs')
 
