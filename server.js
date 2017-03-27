@@ -7,6 +7,7 @@ var logger = require('morgan');
 var hbs = require('hbs')
 var mongoose = require('mongoose');
 var authHelpers = require('./helpers/auth.js')
+var indexController = require('./controllers/index.js')
 var usersController = require('./controllers/users.js');
 var sessionsController = require('./controllers/sessions.js');
 
@@ -29,8 +30,10 @@ app.use(session({
   saveUninitialized: false
 }));
 
+app.use('/', indexController);
 app.use('/users', usersController);
 app.use('/sessions', sessionsController);
+
 
 function hello(req, res, next) {
   console.log('HELLO FROM MIDDLEWARE>>>>>>>>>>>');
@@ -44,3 +47,5 @@ app.get('/test-middleware', authHelpers.authorize, function(req, res) {
 app.listen(3000, function() {
   console.log('hey')
 });
+
+module.exports = app;
