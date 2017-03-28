@@ -20,17 +20,19 @@
     </style> -->
   </head>
   <body>
-    <nav>
+ <nav>
       <ul>
 <!--         <li><a href="/users/signup">signup</a> | </li> -->
-        <li><a href="/sessions/login">login</a> | </li>
-        <li>
- <!--          <form method="post" action="/sessions?_method=DELETE">
-            <button>logout</button> -->
+        <a href="/">home</a>        |
+        <a href="/sessions/login">login</a>     |
+        <a href="/users/signup">signup</a>
+<form method="post" action="/sessions?_method=DELETE">
+            <button>logout</button>
           </form>
         </li>
       </ul>
     </nav>
+
     {{{body}}}
   </body>
 </html>
