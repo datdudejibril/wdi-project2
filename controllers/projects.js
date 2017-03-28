@@ -61,8 +61,8 @@ router.post('/', function createProject(req, res) {
     });
 });
 
-// ADD A NEW ITEM
-router.post('/:id/items', function(req, res){
+// ADD A NEW Project
+router.post('/:id/projects', function(req, res){
   User.findById(req.params.id)
   .exec(function(err, user){
     user.items.push(new Item({name: req.body.name}));
@@ -73,7 +73,7 @@ router.post('/:id/items', function(req, res){
   });
 });
 
-// REMOVE AN ITEM
+// REMOVE AN Project
 router.delete('/:projectId/projects/:id', function(req, res){
   User.findByIdAndUpdate(req.params.projectId, {
     $pull:{

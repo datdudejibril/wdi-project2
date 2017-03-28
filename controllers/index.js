@@ -7,7 +7,9 @@ var User = require('../models/user.js');
 router.get('/', function homeAction(req, res, next) {
 
   const allUsers = User.find({})
-  const allProjects = []
+   .exec(function(err, users){
+        if (err) { console.log(err); }
+    const allProjects = []
 
   allUsers.each(function (user) {
     user.projects.each(function (project){
