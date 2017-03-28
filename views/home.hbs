@@ -1,6 +1,13 @@
 <div class="container">
 <ul>
-    {{#each projectsToLoopOver}}
+
+{{#each users.project}}
+  <ul>
+    <li>{{id}}</li>
+    <li>{{projectName}}</li>
+    <li>{{url}}</li>
+  </ul>
+{{/each}}
         <li>{{projectName}} {{url}}</li>
 
         <a href="/users/{{id}}">show page</a>
