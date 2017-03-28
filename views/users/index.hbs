@@ -9,3 +9,8 @@
     <li>{{password_digest}}</li>
   </ul>
 {{/each}}
+
+{{#if currentUser}}
+  <h1>{{currentUser._id}}</h1>
+  <a href="/users/{{currentUser._id}}/projects">View all Projects</a>
+{{/if}}

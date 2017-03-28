@@ -54,17 +54,17 @@ var user3 = new User({
 
 // create new projects
 var project1 = new Project({
-  projectname: 'Band Board',
+  projectName: 'Band Board',
   url: 'https://band-board.herokuapp.com/',
 });
 
 var project2 = new Project({
-  projectname: 'Giftr',
+  projectName: 'Giftr',
   url: 'https://app-giftr.herokuapp.com//',
 });
 
 var project3 = new Project({
-  projectname: 'Jobs Tracker',
+  projectName: 'Jobs Tracker',
   url: 'https://ancient-springs-85300.herokuapp.com/',
 });
 

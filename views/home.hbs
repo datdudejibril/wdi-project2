@@ -1,61 +1,9 @@
-<div class="container">
-<ul>
+<h1>Welcome to Project App</h1>
 
-{{#each users.project}}
-  <ul>
-    <li>{{id}}</li>
-    <li>{{projectName}}</li>
-    <li>{{url}}</li>
-  </ul>
-{{/each}}
-        <li>{{projectName}} {{url}}</li>
-
-        <a href="/users/{{id}}">show page</a>
+{{#each users}}
+    {{this.email}}
+    {{#each this.projects}}
+        {{this.projectName}}
+        <a href="{{this.url}}">Project URL</a>
     {{/each}}
-</ul>
-        <div class="row">
-        <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h1 class="gallery-title">Rank That Project</h1>
-        </div>
-
-        <div align="center">
-            <button class="btn btn-default filter-button active" data-filter="all">All</button>
-            <button class="btn btn-default filter-button" data-filter="hdpe">HDPE Pipes</button>
-            <button class="btn btn-default filter-button" data-filter="sprinkle">Sprinkle Pipes</button>
-            <button class="btn btn-default filter-button" data-filter="spray">Spray Nozzle</button>
-            <button class="btn btn-default filter-button" data-filter="irrigation">Irrigation Pipes</button>
-        </div>
-        <br/>
-
-
-
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-
-                <div>{{projectname}} <br> {{url}}</div>
-                <div><a href="/projects/delete">Delete Project</a>
-                    <a href="/projects/edit">Edit Project</a>
-                </div>
-            </div>
-
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
-                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-            <div>{{projectname}} <br> {{url}}</div>
-            <div><a href="/projects/delete">Delete Project</a>
-                    <a href="/projects/edit">Edit Project</a>
-                </div>
-            </div>
-
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-            <div>{{projectname}} <br> {{url}}</div>
-            <div><a href="/projects/delete">Delete Project</a>
-                    <a href="/projects/edit">Edit Project</a>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-</section>
+{{/each}}

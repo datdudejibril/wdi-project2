@@ -8,8 +8,9 @@ router.get('/login', function(req, res) {
 })
 
 router.post('/login', authHelpers.loginUser, function(req, res){
-  console.log(req.session)
-  res.redirect('/users/' + req.session.currentUser._id);
+  console.log(req.session);
+  res.redirect('/users/' + req.session.currentUser._id + '/projects');
+  // res.redirect('/users/' + req.session.currentUser._id);
 });
 
 // router.post('/login', authHelpers.loginUser, function(req, res){

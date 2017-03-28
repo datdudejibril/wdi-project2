@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router({mergeParams: true});
 
-var Project = require('../models/project.js')
+var Project = require('../models/project.js');
 // var authHelpers = require('../helpers/auth.js')
-
+var User = require('../models/user.js');
 //Index
 // router.get('/projects', function projects(req, res) {
 //   User.findById(req.params.userId)
@@ -29,14 +29,23 @@ var Project = require('../models/project.js')
 
 //project index
 router.get('/', function(req, res){
-  Project.find({})
-    .exec(function(err, projects){
+  User.findById(req.params.userId)
+    .exec(function(err, user) {
       if (err) { console.log(err); }
-      console.log(projects);
-      res.render('/projects/index', {
-        projects: projects
-      });
+
+      console.log(user);
+      res.render('projects/index', {
+        user: user
+      })
     });
+  // Project.find({})
+  //   .exec(function(err, projects){
+  //     if (err) { console.log(err); }
+  //     console.log(projects);
+  //     res.render('/projects/index', {
+  //       projects: projects
+  //     });
+  //   });
 });
 
 //create
@@ -46,24 +55,35 @@ router.post('/', function createProject(req, res) {
       if (err) {console.log(err); }
 
       const newProject = {
-        projectname: req.body.projectname,
+        projectName: req.body.projectName,
         url: req.body.url
-        }
-        user.projects.push(newProject)
+      }
+      user.projects.push(newProject);
 
-        user.save(function (err) {
-          if (err) console.log(err);
-          console.log('New Project Added for Ranking')
-        });
+      user.save(function (err) {
+        if (err) console.log(err);
+        console.log('New Project Added for Ranking');
+      });
 
-        res.redirect('/users/' + req.session.currentUser._id)
+      res.redirect('/users/' + user.id + '/projects')
         // res.redirect('/users/' + req.session.currentUser._id)
     });
 });
 
-// ADD A NEW Project
+// get a new form
+router.get('/new', function newProjectIdea(req, res){
+  User.findById(req.params.userId)
+    .exec(function (err, user){
+      if (err) { console.log(err) }
+      res.render('projects/new', {
+        user: user
+      });
+    });
+});
+
+// Post A NEW Project
 router.post('/:id/projects', function(req, res){
-  User.findById(req.params.id)
+  User.findById(req.params.userId)
   .exec(function(err, user){
     user.items.push(new Item({name: req.body.name}));
     user.save(function(err){
@@ -73,17 +93,24 @@ router.post('/:id/projects', function(req, res){
   });
 });
 
-// REMOVE AN Project
-router.delete('/:projectId/projects/:id', function(req, res){
-  User.findByIdAndUpdate(req.params.projectId, {
-    $pull:{
-      projects: {_id: req.params.id}
-    }
-  })
-  .exec(function(err, item){
-    if (err) console.log(err);
-    res.redirect('/')
-  });
+// DELETE
+
+router.delete('/:id', function deleteProject(req, res) {
+  User.findById(req.params.userId)
+    .exec(function (err, user){
+      if (err) { console.log(err); }
+
+      user.projects.id(req.params.id).remove();
+
+      user.save(function (err) {
+        if (err) console.log(err);
+        console.log('A Project was removed')
+      });
+
+      res.render('projects/index', {
+        user: user
+      });
+    });
 });
 
 // Project UPDATE ROUTE
