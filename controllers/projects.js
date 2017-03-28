@@ -4,28 +4,6 @@ var router = express.Router({mergeParams: true});
 var Project = require('../models/project.js');
 // var authHelpers = require('../helpers/auth.js')
 var User = require('../models/user.js');
-//Index
-// router.get('/projects', function projects(req, res) {
-//   User.findById(req.params.userId)
-//     .exec(function(err, user){
-//       if (err {console.log(err); }
-//         // res.render('users/projects/projects.hbs')
-//         res.render('projects/index.hbs')
-//          {
-//           user: user
-//         });
-//     });
-// });
-
-// router.get('/', function(req, res){
-//   User.find({})
-//     .exec(function(err, users){
-//       if (err) { console.log(err); }
-//       console.log(users);
-//       res.render('projects/index.hbs', { data: projects }); // this is a nested/ namespacey type way
-//       // res.redner('users/index.hbs', users)
-//     });
-// });
 
 //project index
 router.get('/', function(req, res){
@@ -38,14 +16,7 @@ router.get('/', function(req, res){
         user: user
       })
     });
-  // Project.find({})
-  //   .exec(function(err, projects){
-  //     if (err) { console.log(err); }
-  //     console.log(projects);
-  //     res.render('/projects/index', {
-  //       projects: projects
-  //     });
-  //   });
+
 });
 
 //create
