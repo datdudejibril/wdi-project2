@@ -10,6 +10,7 @@ var authHelpers = require('./helpers/auth.js')
 var indexController = require('./controllers/index.js')
 var usersController = require('./controllers/users.js');
 var sessionsController = require('./controllers/sessions.js');
+var projectsController = require('./controllers/projects.js');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use(session({
 app.use('/', indexController);
 app.use('/users', usersController);
 app.use('/sessions', sessionsController);
+app.use('/users/:userId/projects', projectsController);
 
 
 function hello(req, res, next) {

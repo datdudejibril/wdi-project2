@@ -16,10 +16,13 @@ User.remove({}, function(err){
   console.log(err);
 });
 
+var proj1 = new Project({})
+
 // create new users
 var user1 = new User({
   email: 'user1@gmail.com',
   password_digest: 'pass1',
+  projects: [proj1]
 });
 
 var user2 = new User({
@@ -35,17 +38,17 @@ var user3 = new User({
 // save the users
 user1.save(function(err) {
   if (err) console.log(err);
-  console.log('User created!');
+  console.log('User 1 created!');
 });
 
 user2.save(function(err) {
   if (err) console.log(err);
-  console.log('User created!');
+  console.log('User 2 created!');
 });
 
 user3.save(function(err) {
   if (err) console.log(err);
-  console.log('User created!');
+  console.log('User 3 created!');
 });
 
 
@@ -64,4 +67,21 @@ var project3 = new Project({
   projectname: 'Jobs Tracker',
   url: 'https://ancient-springs-85300.herokuapp.com/',
 });
+
+// save the users
+project1.save(function(err) {
+  if (err) console.log(err);
+  console.log('Project 1 created!');
+});
+
+project2.save(function(err) {
+  if (err) console.log(err);
+  console.log('Project 2 created!');
+});
+
+project3.save(function(err) {
+  if (err) console.log(err);
+  console.log('Project 3 created!');
+});
+
 

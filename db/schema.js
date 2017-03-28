@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
 var ProjectSchema = new Schema({
-  projectname: String,
+  projectName: String, //camelCase this
   url: String
 })
 
@@ -12,6 +12,7 @@ var ProjectSchema = new Schema({
 var UserSchema = new Schema({
   email: String,
   password_digest: String,
+  projects: [ProjectSchema]
 });
 
 UserSchema.pre('save', function(next) {
