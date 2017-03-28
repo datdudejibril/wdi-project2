@@ -95,16 +95,6 @@ router.patch('/:id', function(req, res){
   });
 });
 
-// router.post('/login', authHelpers.loginUser, function(req, res){
-//   console.log(req.session)
-//   res.redirect('/users/' + req.session.currentUser._id);
-// });
 
-
-// router.delete('/', function(req, res){
-//   req.session.destroy(function() {
-//     res.redirect('/')
-//   });
-// });
 
 module.exports = router;
