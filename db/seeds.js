@@ -36,20 +36,20 @@ var user3 = new User({
 });
 
 // save the users
-user1.save(function(err) {
-  if (err) console.log(err);
-  console.log('User 1 created!');
-});
+// user1.save(function(err) {
+//   if (err) console.log(err);
+//   console.log('User 1 created!');
+// });
 
-user2.save(function(err) {
-  if (err) console.log(err);
-  console.log('User 2 created!');
-});
+// user2.save(function(err) {
+//   if (err) console.log(err);
+//   console.log('User 2 created!');
+// });
 
-user3.save(function(err) {
-  if (err) console.log(err);
-  console.log('User 3 created!');
-});
+// user3.save(function(err) {
+//   if (err) console.log(err);
+//   console.log('User 3 created!');
+// });
 
 
 // create new projects
@@ -69,19 +69,39 @@ var project3 = new Project({
 });
 
 // save the users
-project1.save(function(err) {
-  if (err) console.log(err);
-  console.log('Project 1 created!');
+// project1.save(function(err) {
+//   if (err) console.log(err);
+//   console.log('Project 1 created!');
+// });
+
+// project2.save(function(err) {
+//   if (err) console.log(err);
+//   console.log('Project 2 created!');
+// });
+
+// project3.save(function(err) {
+//   if (err) console.log(err);
+//   console.log('Project 3 created!');
+// });
+var users = [user1, user2, user3];
+
+var projects = [project1, project2, project3];
+
+projects.forEach(function(project, i){
+  project.save(function(err) {
+    if(err) { console.log(err); }
+
+    console.log(project);
+  });
 });
 
-project2.save(function(err) {
-  if (err) console.log(err);
-  console.log('Project 2 created!');
+users.forEach(function(user, i){
+  user.projects.push(projects[i]);
+
+
+  user.save(function(err) {
+    if(err) { console.log(err); }
+
+    console.log(user);
+  });
 });
-
-project3.save(function(err) {
-  if (err) console.log(err);
-  console.log('Project 3 created!');
-});
-
-
