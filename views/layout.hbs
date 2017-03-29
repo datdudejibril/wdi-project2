@@ -18,22 +18,35 @@
         display: inline;
       }
     </style> -->
+
+
+
   </head>
   <body>
+   <div class="container  center-block">
+
+
    <nav>
-        <ul>
+
 <!--         <li><a href="/users/signup">signup</a> | </li> -->
-        <a href="/">home</a>        |
+ <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                <a href="/">home</a>        |
         <a href="/sessions/login">login</a>     |
         <a href="/users/signup">signup</a>
           <form method="post" action="/sessions?_method=DELETE">
-            <button>logout</button>
+            <input type="submit" value="logout">
           </form>
-        </li>
-      </ul>
-    </nav>
+</div>
+  <h1>{{currentUser._id}}</h1>
 
+    </nav>
+<div class="row">
+          <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <h1 class="gallery-title">Welcome {{user.email}} to Rank That Project </h1>
+          </div>
     {{{body}}}
+     </section>
   </body>
 </html>
 

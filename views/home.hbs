@@ -1,21 +1,5 @@
-<h1>Welcome to Project App</h1>
-
-{{#each users}}
-
-    {{this.email}}
-    {{#each this.projects}}
-    {{this.imUrl}}
-        {{this.projectName}}
-        <a href="{{this.url}}">Project URL</a>
-    {{/each}}
-{{/each}}
-
-
  <div class="container">
-          <div class="row">
-  <!--         <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <h1 class="gallery-title">Welcome {{user.email}} to Rank That Project </h1>
-          </div> -->
+
 
         <!--   <div align="center">
               <button class="btn btn-default filter-button active" data-filter="all">All</button>
@@ -31,10 +15,12 @@
               <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
 
                   <img src="{{this.imgUrl}}" class="img-responsive">
+
                   <h4>{{this.projectName}}</h4>
+                  {{../this.email}} <br>
                   <a href="{{this.url}}">Your Project URL</a>
-                  <div> <a href="/projects/edit">Edit Project</a>
-                  <a href="/users/{{../user.id}}/projects/{{this.id}}/edit">Edit Project Idea</a>   |
+                  <div> <!-- <a href="/projects/edit">Edit Project</a> -->
+                  <a href="/users/{{../user.id}}/projects/{{this.id}}/edit">Edit Ranked Project</a>
                   <form action="/users/{{../user.id}}/projects/{{this.id}}?_method=DELETE" method="POST">
                     <input type="submit" value="Delete Project Idea"/>
                   </form>
@@ -45,5 +31,6 @@
           </div>
           {{/each}}
           {{/each}}
+
       </div>
   </section>

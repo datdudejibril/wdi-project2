@@ -91,11 +91,18 @@ router.delete('/:id', function deleteProject(req, res) {
 
 // Project UPDATE ROUTE
 router.patch('/:id', function(req, res){
-  Project.findByIdAndUpdate(req.params.id, req.body
-  , { new: true })
+  console.log(req.params)
+  User.findById(req.params.userId)
   .exec(function(err, user){
     if (err) { console.log(err); }
-    console.log(project);
+
+    var project = user.projects.id(req.params.id)
+    project.set(req.body)
+
+    user.save(function(err){
+      if (err) console.log(err);
+    });
+
     res.redirect('/')
   });
 });
@@ -121,10 +128,11 @@ router.get('/:id/edit', function editProjectIdea(req, res) {
   User.findById(req.params.userId)
     .exec(function (err, user){
       if (err) { console.log(err); }
-      const projects = user.projects.id(req.params.id);
+      const project = user.projects.id(req.params.id);
 
       res.render('projects/edit', {
-        user: user
+        user: user,
+        project: project
       });
     });
 });
