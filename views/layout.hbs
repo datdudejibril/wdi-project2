@@ -33,7 +33,8 @@
 
                 <a href="/">home</a>        |
         <a href="/sessions/login">login</a>     |
-        <a href="/users/signup">signup</a>
+        <a href="/users/signup">signup</a>  |
+        <a href="/users/{{../user.id}}">profile</a>
           <form method="post" action="/sessions?_method=DELETE">
             <input type="submit" value="logout">
           </form>
@@ -43,8 +44,8 @@
     </nav>
 <div class="row">
           <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <h1 class="gallery-title">Welcome {{user.email}} to Rank That Project </h1>
-          </div>
+             <div class="clear"><h1 class="gallery-title">Welcome {{user.email}} to Rank That Project </h1>
+          </div> </div>
     {{{body}}}
      </section>
   </body>

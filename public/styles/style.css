@@ -1,4 +1,6 @@
-
+.clear{
+    clear: both !important;
+}
 .gallery-title
 {
     font-size: 36px;
