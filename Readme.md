@@ -8,7 +8,7 @@ http://run.mockplus.com/DfLZNUmlhYqbZARL/index.html
 ![N|Solid](http://jibrilsulaiman.com/wp-content/uploads/2017/03/wire2.png)
 ![N|Solid](http://jibrilsulaiman.com/wp-content/uploads/2017/03/wire3.png)
 # ERD!
-
+![N|Solid](http://jibrilsulaiman.com/wp-content/uploads/2017/03/erd.png)
 #User Stories
 https://trello.com/b/7OXMZNKY/wdi-project-2
 # Screenshots
