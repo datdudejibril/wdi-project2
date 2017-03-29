@@ -29,3 +29,5 @@ Learn more and do better next time!!!
 
 #GitHub
 https://github.com/datdudejibril/wdi-project2
+
+#Thanks:  David, Brandon, Josh, Randy, Maren, Danny!!!!!
