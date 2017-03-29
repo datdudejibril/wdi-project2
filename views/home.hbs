@@ -21,8 +21,8 @@
                   <a href="{{this.url}}">Your Project URL</a>
                   <div> <!-- <a href="/projects/edit">Edit Project</a> -->
                   <a href="/users/{{../user.id}}/projects/{{this.id}}/edit">Edit Ranked Project</a>
-                  <form action="/users/{{../user.id}}/projects/{{this.id}}?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete Project Idea"/>
+                  <form action="/users/{{../user.id}}/projects/{{this.id}}?_method=DELETE" class="btn btn-sm btn-primary" method="POST">
+                    <input type="submit" class="btn btn-sm btn-primary" value="Delete Project Idea"/>
                   </form>
 
               </div>
