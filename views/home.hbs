@@ -33,7 +33,8 @@
                   <img src="{{this.imgUrl}}" class="img-responsive">
                   <h4>{{this.projectName}}</h4>
                   <a href="{{this.url}}">Your Project URL</a>
-                  <div> <a href="/projects/edit">Edit Project</a>     |
+                  <div> <a href="/projects/edit">Edit Project</a>
+                  <a href="/users/{{../user.id}}/projects/{{this.id}}/edit">Edit Project Idea</a>   |
                   <form action="/users/{{../user.id}}/projects/{{this.id}}?_method=DELETE" method="POST">
                     <input type="submit" value="Delete Project Idea"/>
                   </form>

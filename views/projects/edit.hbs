@@ -1,8 +1,26 @@
-Projects List
 
-<form action="/users/{{user.id}}/projects/{{projects.id}}?_method=PUT" methond="POST">
 
-<input type="text" name="projectname" value="{{projects.projectname"/>
-<input type="text" name="url" value="{{projects.url"/>
-<input type="submit" value="Update Ranked Project">
+<h1>Edit Project Idea</h1>
+<form action="/users/{{user.id}}/projects/{{this.id}}?_method=PUT" method="POST">
+  <div>
+    <label for="Name">
+      Name
+    </label>
+    <input type="text" name="projectName" value="{{projects.projectName}}"/>
+  </div>
+  <div>
+    <label for="URL">
+      URL
+    </label>
+    <input type="text" name="url" value="{{projects.url}}"/>
+  </div>
+  <div>
+    <label for="Image URL">
+      Image URL
+    </label>
+    <input type="text" name="imgUrl" value="{{projects.imgUrl}}"/>
+  </div>
+  <div>
+    <input type="submit" value="Update Project Idea"/>
+  </div>
 </form>
