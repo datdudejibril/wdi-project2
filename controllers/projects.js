@@ -27,7 +27,8 @@ router.post('/', function createProject(req, res) {
 
       const newProject = {
         projectName: req.body.projectName,
-        url: req.body.url
+        url: req.body.url,
+        imgUrl: req.body.imgUrl
       }
       user.projects.push(newProject);
 
@@ -64,6 +65,10 @@ router.post('/:id/projects', function(req, res){
   });
 });
 
+
+
+
+
 // DELETE
 
 router.delete('/:id', function deleteProject(req, res) {
@@ -94,6 +99,37 @@ router.patch('/:id', function(req, res){
     res.redirect('/')
   });
 });
+
+// EDIT
+// EDIT
+
+// router.get('/:id/edit', function editProjectIdea(req, res) {
+//   User.findById(req.params.userId)
+//     .exec(function (err, user){
+//       if (err) { console.log(err); }
+//       const projectIdea = user.projectIdeas.id(req.params.id);
+
+//       res.render('project_ideas/edit', {
+//         projectIdea: projectIdea,
+//         user: user
+//       });
+//     });
+// });
+
+
+router.get('/:id/edit', function editProjectIdea(req, res) {
+  User.findById(req.params.userId)
+    .exec(function (err, user){
+      if (err) { console.log(err); }
+      const projects = user.projects.id(req.params.id);
+
+      res.render('projects/edit', {
+        user: user
+      });
+    });
+});
+
+
 
 
 

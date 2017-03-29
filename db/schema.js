@@ -5,7 +5,8 @@ mongoose.Promise = global.Promise;
 
 var ProjectSchema = new Schema({
   projectName: String, //camelCase this
-  url: String
+  url: String,
+  imgUrl: String
 })
 
 

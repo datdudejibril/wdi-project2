@@ -16,9 +16,9 @@
   <a href="/users/{{user.id}}/projects/new">Add Project to be Ranked</a>        |
   <div class="container">
           <div class="row">
-          <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <!--         <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <h1 class="gallery-title">Welcome {{user.email}} to Rank That Project </h1>
-          </div>
+          </div> -->
 
         <!--   <div align="center">
               <button class="btn btn-default filter-button active" data-filter="all">All</button>
@@ -30,20 +30,22 @@
           <!-- <br/> -->
 
 
-
-              {{#each user.projects}}
+            {{#each user.projects}}
               <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-                  <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+
+                  <img src="{{this.imgUrl}}" class="img-responsive">
                   <h4>{{this.projectName}}</h4>
                   <a href="{{this.url}}">Your Project URL</a>
                   <div> <a href="/projects/edit">Edit Project</a>     |
                   <form action="/users/{{../user.id}}/projects/{{this.id}}?_method=DELETE" method="POST">
-  <input type="submit" value="Delete Project Idea"/>
-</form>
+                    <input type="submit" value="Delete Project Idea"/>
+                  </form>
+
               </div>
-              {{/each}}
+
 
           </div>
+          {{/each}}
       </div>
   </section>
 
