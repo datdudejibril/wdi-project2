@@ -12,10 +12,10 @@
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
-    "express-session": "^1.15.1",
+    "express-session": "^1.15.2",
     "hbs": "^4.0.1",
     "method-override": "^2.3.8",
-    "mongoose": "^4.9.1",
+    "mongoose": "^4.9.2",
     "morgan": "^1.8.1",
     "pryjs": "^1.0.3"
   }
