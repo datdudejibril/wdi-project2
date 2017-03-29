@@ -16,7 +16,7 @@ router.get('/', function(req, res) {
 })
 
 router.get('/signup', function(req, res){
-  res.render('users/signup.hbs')
+  res.redirect('/users/' + req.session.currentUser._id + '/projects');
 });
 
 router.get('/:id', authHelpers.authorize, function(req, res) {
